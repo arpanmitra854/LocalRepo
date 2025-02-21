@@ -1,0 +1,100 @@
+<------ Git & GitHub ------>
+
+***IMPORTANT TERMS USED IN GIT & GITHUB :-
+1. Local Repository - folders we made into our pc
+2. Remote Repository - A folder made in GitHub
+3. nothing to commit, working tree clean - There are no new or modified files that need to be committed. Your project folder is completely synced with the last commit; no untracked or unstaged changes exist.
+
+
+
+
+
+1. Git Configuration
+git config --global user.name "{name}" ----> Sets the Git username globally for all local repository. It helps to identify while working with a team
+
+git config --global user.email "{email id}" ----> sets email id
+
+git config --list ----> lists all the informations(like - username, useremail)
+
+
+
+
+
+2. Git Clone
+By using Git clone we can make a clone of a git repo into our VScode
+
+git clone {link of https}
+
+
+
+
+3. Workflow Upload files from Local Repo to Remote Repo
+add --> commit --> push
+
+add --> add a file as it looks now to your next commit (stage)
+commit --> commit your staged content as a new commit snapshot
+push --> push into the remote repository
+status --> check the status of the files. There are 4 types of status.
+
+(i) untracked --> new files that git doesn't track yet(just a file created into the local repo but the remote repo doen't know about it)
+
+(ii) modified --> some content of the file has been changed(it is not added yet. just modified)
+
+(iii) unmodified --> unchanged
+
+(iv) staged --> file is ready to be commited. (file is added & now it is ready for commit)
+
+git status
+git add {filename} // git add . --> if want every file to add
+git commit -m "{any comment}"
+git remote add origin {https link}
+git branch -M main
+git push -u origin main // origin --> github repo, main --> branch
+
+
+
+
+
+4. Edit and update something from localrepo to remoterepo
+
+git status
+git add .
+git commit -m "{any comment}"
+git push
+
+
+
+
+5. If any changes is done into the remote repo but you want to update the change of the local repo just do
+
+git push origin main --force
+
+
+
+
+6. Change the name of a file in local device and update it into remote repo
+
+git mv {old_file_name_._extension} {new_file_name_._extension}
+git commit -m {"comments"}
+git push
+
+
+
+
+
+7. Branch in GitHub --> many developers work over a project at a time. So there is a project where each developers works for a different feature of the product. So do this different feature at a time they use git branch where in each branch they do their work over the feature
+
+
+git branch    ---> shows the current branch 
+git branch -M main    ---> used to rename a branch
+git checkout {branch name}    ---> going to the perticular branch after checking out from the current branch
+git checkout -b {branch name}    ---> create a new branch
+git branch -d {branch name}    ---> delete a branch
+
+
+
+
+8. Merge two branch
+Pull Request in GitHub
+then to show the result into local repo
+git pull origin {branch name where the change will occur}
